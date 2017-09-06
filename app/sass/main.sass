@@ -1,0 +1,170 @@
+@import "libs"
+@import "vars"
++reset()
+@import "settings"
+
+.main-head
+  position: relative
+  min-height: 100vh
+  background: $white url("../img/bg6.jpg") no-repeat top right 35%
+  background-size: cover
+
+
+.top
+  +row-flex()
+  flex-wrap: wrap
+  +sm("margin-right", 0)
+  margin-top: -1px
+
+
+.main-nav
+  +col()
+  +col-5()
+  +col-md-6()
+  +col-sm-10()
+  position: relative
+  +sm("margin-bottom", -1px)
+  &__list
+    +xs('display', none)
+    +row-flex()
+    justify-content: space-around
+    margin-left: 20px
+    border-bottom: 1px solid rgba($white, .6)
+  &__item
+  &__link
+    text-decoration: none
+    color: rgba($white, .6)
+    +sm("color", rgba($white, .8))
+    font-size: 16px
+    padding: 20px 0 8px
+    display: inline-block
+    vertical-align: middle
+    transform: perspective(1px) translateZ(0)
+    box-shadow: 0 0 1px transparent
+    position: relative
+    overflow: hidden
+    &::before
+      content: ""
+      position: absolute
+      z-index: -1
+      left: 50%
+      right: 50%
+      bottom: 0
+      background: rgba($white, .6)
+      height: 3px
+      transition-property: left, right
+      transition-duration: 0.3s
+      transition-timing-function: ease-out
+    &_active
+      &::before
+        left: 0
+        right: 0
+    &:hover
+      &::before
+        left: 0
+        right: 0
+
+
+.mobile-nav
+  position: absolute
+  left: 0
+  top: 0
+  transform: translateX(-100%)
+  transition: all .3s ease-in-out
+  background-color: $brown
+  color: rgba($white, .6)
+  width: 75%
+  height: 100%
+
+  &.active
+    transform: translateX(0)
+
+  &__header
+    padding: 20px 0 20px 20px
+    border-bottom: 2px solid lighten($brown, 10%)
+    h3
+      font-size: 20px
+      font-weight: 600
+      margin: 0
+  &__list
+    display: inline-block
+    width: 100%
+  &__link
+    position: relative
+    padding: 10px 20px
+    display: block
+    color: rgba($white, .6)
+    font-family: "Roboto", sans-serif
+    text-decoration: none
+    border-bottom: 1px solid lighten($brown, 10%)
+    +mt(.3s)
+    &::before
+      content: ""
+      position: absolute
+      z-index: -1
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
+      background: lighten($brown, 8%)
+      transform: scaleX(0)
+      transition-property: transform
+      transition-duration: 0.3s
+      transition-timing-function: ease-out
+    &_active
+      &::before
+        transform: scaleX(1)
+    &:hover
+      &::before
+        transform: scaleX(1)
+
+
+.hamburger
+  position: fixed
+  right: 20px
+  top: 8px
+  display: none
+  outline: none
+  +xs('display', inline-block)
+  &-inner
+    background-color: rgba($white, .8)
+    +xs('background-color', rgba($brown, .8))
+    &::before, &::after
+      background-color: rgba($white, .8)
+      +xs('background-color', rgba($brown, .8))
+
+
+.header-contacts
+  +col()
+  +col-7()
+  +col-md-6()
+  +col-sm-12()
+  height: 80px
+  background: url("../img/line.svg") no-repeat top  left
+  background-size: cover
+  +sm-block()
+    background: rgba($white, .8)
+    width: 100%
+    margin-right: 0
+
+.brand
+  margin-top: 4%
+  +col-5()
+  +col-sm-12()
+  &__logo
+    text-align: center
+    position: relative
+    h2
+      font-family: $accent-font
+      font-size: 140px
+      color: $accent
+    p
+      position: absolute
+      font-family: $alter-font
+      font-style: italic
+      font-size: 24px
+      right: 150px
+      bottom: 30px
+      text-decoration: overline
+      line-height: 15px
+

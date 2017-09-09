@@ -1,4 +1,4 @@
-$columns: 12
+$columns: 18
 $offset: 20px
 $offset_one_side: ($offset / 2)
 $atom: (100% / $columns)
@@ -148,6 +148,24 @@ $break_xxs: 360px
 =col-12()
     +size(12)
 
+=col-13()
+    +size(13)
+
+=col-14()
+    +size(14)
+
+=col-15()
+    +size(15)
+
+=col-16()
+    +size(16)
+
+=col-17()
+    +size(17)
+
+=col-18()
+    +size(18)
+
 =offset($n)
     $value: $atom * $n
     margin-left: #{calc(#{$value} + #{$offset_one_side})}
@@ -254,6 +272,24 @@ $break_xxs: 360px
 
 =col-md-12()
     +size-md(12)
+
+=col-md-13()
+    +size-md(13)
+
+=col-md-14()
+    +size-md(14)
+
+=col-md-15()
+    +size-md(15)
+
+=col-md-16()
+    +size-md(16)
+
+=col-md-17()
+    +size-md(17)
+
+=col-md-18()
+    +size-md(18)
 
 =offset-md($n)
     @media screen and (max-width: $break_md)
@@ -410,6 +446,24 @@ $break_xxs: 360px
 =col-sm-12()
     +size-sm(12)
 
+=col-sm-13()
+    +size-sm(13)
+
+=col-sm-14()
+    +size-sm(14)
+
+=col-sm-15()
+    +size-sm(15)
+
+=col-sm-16()
+    +size-sm(16)
+
+=col-sm-17()
+    +size-sm(17)
+
+=col-sm-18()
+    +size-sm(18)
+
 =offset-sm($n)
     @media screen and (max-width: $break_sm)
         $value: $atom * $n
@@ -565,6 +619,24 @@ $break_xxs: 360px
 =col-xs-12()
     +size-xs(12)
 
+=col-xs-13()
+    +size-xs(13)
+
+=col-xs-14()
+    +size-xs(14)
+
+=col-xs-15()
+    +size-xs(15)
+
+=col-xs-16()
+    +size-xs(16)
+
+=col-xs-17()
+    +size-xs(17)
+
+=col-xs-18()
+    +size-xs(18)
+
 =offset-xs($n)
     @media screen and (max-width: $break_xs)
         $value: $atom * $n
@@ -719,6 +791,24 @@ $break_xxs: 360px
 
 =col-xxs-12()
     +size-xxs(12)
+
+=col-xxs-13()
+    +size-xxs(13)
+
+=col-xxs-14()
+    +size-xxs(14)
+
+=col-xxs-15()
+    +size-xxs(15)
+
+=col-xxs-16()
+    +size-xxs(16)
+
+=col-xxs-17()
+    +size-xxs(17)
+
+=col-xxs-18()
+    +size-xxs(18)
 
 =offset-xxs($n)
     @media screen and (max-width: $break_xxs)

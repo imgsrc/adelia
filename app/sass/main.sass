@@ -19,9 +19,9 @@
 
 .main-nav
   +col()
-  +col-5()
-  +col-md-6()
-  +col-sm-10()
+  +col-7()
+  +col-md-9()
+  +col-sm-15()
   position: relative
   +sm("margin-bottom", -1px)
   &__list
@@ -86,9 +86,11 @@
       font-size: 20px
       font-weight: 600
       margin: 0
+
   &__list
     display: inline-block
     width: 100%
+
   &__link
     position: relative
     padding: 10px 20px
@@ -111,6 +113,7 @@
       transition-property: transform
       transition-duration: 0.3s
       transition-timing-function: ease-out
+
     &_active
       &::before
         transform: scaleX(1)
@@ -126,6 +129,7 @@
   display: none
   outline: none
   +xs('display', inline-block)
+
   &-inner
     background-color: rgba($white, .8)
     +xs('background-color', rgba($brown, .8))
@@ -136,9 +140,9 @@
 
 .header-contacts
   +col()
-  +col-7()
-  +col-md-6()
-  +col-sm-12()
+  +col-11()
+  +col-md-9()
+  +col-sm-18()
   height: 80px
   background: url("../img/line.svg") no-repeat top  left
   background-size: cover
@@ -147,24 +151,108 @@
     width: 100%
     margin-right: 0
 
+
 .brand
-  margin-top: 4%
+  margin-top: 3%
   +col-5()
-  +col-sm-12()
+  +offset-left(1.8)
+  +col-sm-18()
+
   &__logo
-    text-align: center
     position: relative
+    cursor: default
+
     h2
       font-family: $accent-font
       font-size: 140px
       color: $accent
-    p
+
+    span
       position: absolute
       font-family: $alter-font
-      font-style: italic
-      font-size: 24px
-      right: 150px
-      bottom: 30px
+      font-size: 22px
+      font-weight: 600
+      right: 0
+      bottom: 18px
       text-decoration: overline
-      line-height: 15px
 
+  p
+    font-size: 18px
+    text-align: right
+    color: rgba($white, .8)
+
+
+.head-slider
+  +col-7()
+  +offset-left(1)
+  +col-sm-18()
+  position: relative
+  height: 360px
+  margin-top: 100px
+  background-color: transparent
+  border: 2px solid rgba($white, .8)
+  border-radius: 15px
+
+  &__slide
+    height: 360px
+
+  &__dots
+    position: absolute
+    display: flex
+    align-items: center
+    justify-content: space-around
+    bottom: 10px
+    left: 50%
+    transform: translateX(-50%)
+    width: 80px
+
+    li
+      display: inline-block
+
+      button
+        background-color: rgba($white, .4)
+        border: none
+        color: transparent
+        border-radius: 50%
+        width: 8px
+        height: 8px
+        padding: 0
+        cursor: pointer
+
+      &.slick-active
+        button
+          background-color: rgba($white, .8)
+
+  &__arrows
+
+    &_left
+      position: absolute
+      left: 25px
+      top: 50%
+      transform: translateY(-50%)
+      background-color: transparent
+      cursor: pointer
+      border: none
+      padding: 0
+
+      .mdi
+        font-size: 16px
+        color: rgba($white, .4)
+        &:hover
+          color: rgba($white, .8)
+
+    &_right
+      position: absolute
+      right: 25px
+      top: 50%
+      transform: translateY(-50%)
+      background-color: transparent
+      cursor: pointer
+      border: none
+      padding: 0
+
+      .mdi
+        font-size: 16px
+        color: rgba($white, .4)
+        &:hover
+          color: rgba($white, .8)

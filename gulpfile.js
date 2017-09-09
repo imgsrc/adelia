@@ -27,7 +27,7 @@ var gulp = require('gulp'),
 gulp.task('scripts', function () {
   return gulp.src([
     'node_modules/jquery/dist/jquery.js',
-    'node_modules/jquery/dest/tilt.jquery.js',
+    'node_modules/slick-carousel/slick/slick.js'
   ])
       .pipe(concat('scripts.min.js'))
       .pipe(gulp.dest('app/js'))

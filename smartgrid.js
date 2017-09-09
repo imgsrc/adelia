@@ -3,7 +3,7 @@ var smartgrid = require( 'smart-grid' );
 var settings = {
     filename: '_smart-grid',
     outputStyle: 'sass',
-    columns: 12,
+    columns: 18,
     offset: "20px",
     container: {
         maxWidth: "1200px"

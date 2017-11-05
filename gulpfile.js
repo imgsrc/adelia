@@ -15,6 +15,7 @@ var gulp = require('gulp'),
     pxtorem = require('postcss-pxtorem'),
     mqpacker = require('css-mqpacker'),
     focus = require('postcss-focus'),
+    sortCSSmq = require('sort-css-media-queries'),
 
     del = require('del'),
     imagemin = require('gulp-imagemin'),
@@ -58,9 +59,11 @@ gulp.task('postcss', function () {
       minPixelValue: 6
     }),
     mqpacker({
-      sort: true
+      sort: sortCSSmq.desktopFirst
     }),
-    cssnano()
+    cssnano({
+      "zindex": false
+    })
   ]);
   return gulp.src('app/sass/*.sass')
       .pipe(sourcemaps.init())

@@ -6,26 +6,30 @@
 .main-head
   position: relative
   min-height: 100vh
-  background: $white url("../img/bg6.jpg") no-repeat top right 35%
+  background: $brown url("../img/bg6.jpg") no-repeat top right 35%
   background-size: cover
+  +md-block()
+    background-position: top right 70%
+  +sm("background", url("../img/bg6_mob.jpg") top right 40%)
+  +xs-block()
 
 
 .top
   +row-flex()
   flex-wrap: wrap
-  +sm("margin-right", 0)
+  +md("margin-right", 0)
   margin-top: -1px
 
 
 .main-nav
   +col()
   +col-7()
-  +col-md-9()
-  +col-sm-15()
-  position: relative
+  +col-md-8()
+  +col-sm-18()
   +sm("margin-bottom", -1px)
+  +xs('display', none)
+  position: relative
   &__list
-    +xs('display', none)
     +row-flex()
     justify-content: space-around
     margin-left: 20px
@@ -75,6 +79,7 @@
   color: rgba($white, .6)
   width: 75%
   height: 100%
+  z-index: 1000
 
   &.active
     transform: translateX(0)
@@ -124,10 +129,11 @@
 
 .hamburger
   position: fixed
-  right: 20px
+  right: 16px
   top: 8px
   display: none
   outline: none
+  z-index: 500
   +xs('display', inline-block)
 
   &-inner
@@ -141,22 +147,32 @@
 .header-contacts
   +col()
   +col-11()
-  +col-md-9()
+  +col-md-10()
   +col-sm-18()
   height: 80px
   background: url("../img/line.svg") no-repeat top  left
   background-size: cover
+  +md-block()
+    margin-right: 0
+    width: calc(55.55556% - 10px)
   +sm-block()
     background: rgba($white, .8)
     width: 100%
     margin-right: 0
 
-
 .brand
-  margin-top: 3%
+  margin-top: 4%
   +col-5()
-  +offset-left(1.8)
-  +col-sm-18()
+  +offset-left(2)
+  +col-md-9()
+  +offset-left-md(0.4)
+  +col-sm-13()
+  +col-xs-18()
+  +offset-left-sm(2)
+  +offset-left-xs(0)
+  +md("margin-top", 2%)
+  +sm("margin-top", 7%)
+  +xs("margin-top", 15%)
 
   &__logo
     position: relative
@@ -166,6 +182,11 @@
       font-family: $accent-font
       font-size: 140px
       color: $accent
+      +md("font-size", 120px)
+      +sm("font-size", 140px)
+      +xs-block
+        font-size: 100px
+        line-height: 1.2
 
     span
       position: absolute
@@ -173,29 +194,58 @@
       font-size: 22px
       font-weight: 600
       right: 30px
-      bottom: 18px
+      bottom: 25px
       text-decoration: overline
+      +sm-block()
+        right: 60px
+        bottom: 25px
+        font-size: 20px
+      +md-block()
+        right: 80px
+        bottom: 25px
+        font-size: 18px
+      +xs-block()
+        font-size: 15px
+        bottom: 5px
+        right: 20px
 
   p
     font-size: 18px
     text-align: right
     color: rgba($white, .8)
     padding-right: 30px
+    +md("padding-right", 80px)
+    +sm("padding-right", 60px)
+    +xs-block
+      font-size: 16px
+      padding-right: 20px
 
 
 .head-slider
   +col-7()
-  +offset-left(1)
+  +col-md-9()
   +col-sm-18()
   position: relative
   height: 360px
-  margin-top: 100px
+  margin-top: 60px
+  margin-left: 50px
   background-color: transparent
   border: 2px solid rgba($white, .8)
   border-radius: 15px
+  +md-block()
+    margin-left: 30px
+    height: 300px
+    margin-top: 20px
+  +sm-block()
+    margin-left: 10px
+    height: 360px
+    margin-top: 40px
+  +xs("height", 240px)
 
   &__slide
     height: 360px
+    +md("height", 300px)
+    +xs("height", 260px)
 
   &__dots
     position: absolute
@@ -228,32 +278,36 @@
 
     &_left
       position: absolute
-      left: 25px
+      left: 30px
       top: 50%
       transform: translateY(-50%)
       background-color: transparent
       cursor: pointer
       border: none
       padding: 0
+      z-index: 10
+      &:hover
+        .mdi
+          color: rgba($white, .8)
 
       .mdi
-        font-size: 16px
+        font-size: 20px
         color: rgba($white, .4)
-        &:hover
-          color: rgba($white, .8)
 
     &_right
       position: absolute
-      right: 25px
+      right: 30px
       top: 50%
       transform: translateY(-50%)
       background-color: transparent
       cursor: pointer
       border: none
       padding: 0
+      z-index: 10
+      &:hover
+        .mdi
+          color: rgba($white, .8)
 
       .mdi
-        font-size: 16px
+        font-size: 20px
         color: rgba($white, .4)
-        &:hover
-          color: rgba($white, .8)
